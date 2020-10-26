@@ -41,6 +41,7 @@ class _NewsSearchScreenState extends State<NewsSearchScreen> {
             },
             style: TextStyle(fontSize: 20, color: Colors.white),
             decoration: InputDecoration(
+                focusedBorder: InputBorder.none,
                 suffixIcon: IconButton(
                     icon: Icon(
                       Icons.clear,
@@ -67,10 +68,11 @@ class _NewsSearchScreenState extends State<NewsSearchScreen> {
               itemBuilder: (context, index) {
                 return Card(
                   child: ListTile(
-                    onTap: (){
-                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => 
-                          NewsArticleDetailPage(vm: vm.articles[index],)));
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => NewsArticleDetailPage(
+                                vm: vm.articles[index],
+                              )));
                     },
                     leading: vm.articles[index].urlToImage == null
                         ? Container(

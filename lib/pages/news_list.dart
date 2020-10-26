@@ -46,8 +46,9 @@ class _NewsListState extends State<NewsList> {
                   child: ListTile(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => 
-                          NewsArticleDetailPage(vm: vm.articles[index],)));
+                          builder: (context) => NewsArticleDetailPage(
+                                vm: vm.articles[index],
+                              )));
                     },
                     leading: vm.articles[index].urlToImage == null
                         ? Container(
@@ -58,8 +59,8 @@ class _NewsListState extends State<NewsList> {
                               fit: BoxFit.cover,
                             ))
                         : Container(
-                            height: 100,
-                            width: 100,
+                            height: 80,
+                            width: 80,
                             child: Image.network(
                               vm.articles[index].urlToImage,
                               fit: BoxFit.cover,
